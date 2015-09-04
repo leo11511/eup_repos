@@ -1,0 +1,18 @@
+Zuweisung:
+	variablen_name = "Dies ist ein String"
+	#eine Zuweisung erfolgt über den Zuweisungsoperator '='
+	#der Vriablentyp (String, Integer, Time,...) erfolg über die Eingabe
+
+Zeichenkette (String):
+	str ="Dies und 15 andere."
+		#Ein String wird erzeugt, indem ein beliebige Anzahl von Zeichen (Zahlen, Buchstaben) innerhalb von Anführungszeichen (sowohl einfahe als auf doppelte) steht.
+	Zusammengesetze Zeichenkette:
+		tag = "Freitag"
+		str = "Heute ist " + tag
+			#das +-Zeichen verbindet zwei Strings
+
+Ganze Zahl (Integer, Fixum)
+	zahl = 15
+
+Float (Kommazahl)
+	komma_zahl = 13.44	

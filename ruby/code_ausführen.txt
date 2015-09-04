@@ -1,1 +1,4 @@
-sss
+Ruby-Console
+	irb auf der Konsole eingegeben startet eine Eingabeaufforderung die alle RUBY-Befehle kennt
+
+	
