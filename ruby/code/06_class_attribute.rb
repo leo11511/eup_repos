@@ -46,4 +46,9 @@ players.each do |var|
 		var.blam
 		puts var
 end
+
+player.size.times do |i|
+	puts i.to_s
+	puts players[i]
+end
  
