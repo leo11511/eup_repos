@@ -7,52 +7,43 @@
 
 
 class Player
+	attr_reader :health
+	attr_accessor :name
  		def initialize(pname, phealth = 100)
  			@name = pname
  			@health = phealth
  		end
 
  		def to_s
- 			"Ich bin #{@name} mit einem Wert von #{@health}"
+ 			"Ich bin #{@name} mit einem Wert von #{@health} und einem Score von #{score}"
  		end
 
  		def blam
  			@health -= 10
- 			"#{@name} wurde geblamt"
+ 			puts "#{@name} wurde geblamt"
  		end
 
  		def w00t
- 			@health -= 10
- 			"#{@name} got w00ted"
+ 			@health += 10
+ 			puts "#{@name} got w00ted"
+ 		end
+ 		def score
+ 			@health + @name.length
  		end
 
- 		# def health
- 		# 	@health
- 		# end
- 		attr_accessor:health
- 		attr_accessor:name
-
- 		def attribut
-  			@ergebnis=@health+@name.bytesize
-
- 		end
-
- end
-
- player1 = Player.new("Ludwig", 110)
- #puts player1.say_hello
- player2 = Player.new("Wilhelm")
- #puts player2.say_hello
- puts player2.blam
-
- players=player1,player2
- puts player1.health
- puts player1.name
- puts player1.name = "Bert"
- puts player1.attribut
- players_array=[player1,player2]
- zaehler=0
- while zaehler <2
- puts players_array[zaehler]
- zaehler+=1
 end
+
+player1 = Player.new("Ludwig", 110)
+player2 = Player.new("Wilhelm")
+puts player2.health
+player1.name = "Willi"
+puts player1.name
+puts player1.score
+puts player1.to_s
+players = [player1, player2]
+
+players.each do |var| 
+		var.blam
+		puts var
+end
+ 

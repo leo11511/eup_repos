@@ -11,14 +11,14 @@
 
 
  => "SommerHerbstWinter" 
-2.1.1 :021 > Jahreszeiten
- => ["Sommer", "Herbst", "Winter"] 
-2.1.1 :022 > Jahreszeiten.join("und")
- => "SommerundHerbstundWinter" 
-2.1.1 :023 > Jahreszeiten.join(" und ")
- => "Sommer und Herbst und Winter"
+			jz = ["Sommer", "Herbst", "Winter"]
+			jz.size
+			jz[1]
+			jz << "Frühjahr"
+
+		ri = Array.join
+
+		jz.join("und")
 
 
-2.1.1 :144 > Jahreszeiten.sort_by{rand}
- => ["Sommer", "Herbst", "Winter"] 
-2.1.1 :145 > 
+

@@ -3,6 +3,9 @@
 # Legen Sie ein Objekt an und wenden Sie die Methoden add und subtract an.
 
 class Calculator
+
+	attr_accessor :zahl1, :zahl2
+
 		def initialize(pzahl1, pzahl2=0)
 			@zahl1 = pzahl1
 			@zahl2 = pzahl2
@@ -24,4 +27,6 @@ end
 
 rechnung1=Calculator.new(5,6)
 rechnung1.add
+rechnung1.substract
+rechnung1.zahl1 = 10
 rechnung1.substract
