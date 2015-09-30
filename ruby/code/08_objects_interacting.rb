@@ -1,25 +1,27 @@
 class Game
+	attr_reader :health
 	def initialize(title)
 		@title = title
 		@players = []
+
 	end
 
 	def add_player(player)
 		@players << player 
 	end
 	def play
-		puts "#{@title}'s Game"
+		puts "Da sind #{@players.count} in #{@title}'s Team"
+		@players.each do |b|
+			puts b
+		end
 		@players.each do |xyz|
 			puts xyz.blam
 			puts xyz.w00t
 			puts xyz.w00t
 			puts xyz
 		end
+	end
 
-	end
-	def to_s
-		@players.size.to_s
-	end
 end
 
 
@@ -27,20 +29,22 @@ class Player
 def initialize(pname, phealth=100)
 			@name = pname
 			@health = phealth
+			@score = pname.length + @health
+
 	end
 
 	def to_s
-	"Ich bin #{@name} mit einem Wert von #{@health}"
+	"Ich bin #{@name} mit einem health von #{@health} und ein Score von #{@score}"
 	end
 
 	def blam
 		@health -=10
-		puts "#{@name} wurde geblamt!!!"
+		"#{@name} wurde geblamt!!!"
 	end
 
 	def w00t
 		@health += 10
-		puts "#{@name} wurde um 10 gew00tet!!! Aktueller Stand: #{@health}"
+		"#{@name} wurde um 10 gew00tet"
 	end
 
 end	
@@ -55,6 +59,7 @@ spiel1.add_player(player1)
 spiel1.add_player(player2)
 spiel1.add_player(player3)
 spiel1.play
+
 
 
 
