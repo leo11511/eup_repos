@@ -172,10 +172,12 @@ end
 
  puts "\n"
 # b. Peter, Paul und Mary bilden einen Hash, etwa derart: lotto = { "Peter" => [ 2,22,33,11,23,32,26 ], ...}
-puts lotto2 = (1..49).to_a.sample(7).sort
-
 lotto_hash = Hash.new
-%(Peter Paul Marry)
+%w(Peter Paul Marry).each do |vname|
+	lotto_hash[vname] = (1..49).to_a.sample(7).sort
+end
+
+puts lotto_hash
 # 4. Vergleich:
 # str_1 = "Programmieren, Federball, Whisky"
 # str_2 = "Fussball, Bier, Programmieren"
