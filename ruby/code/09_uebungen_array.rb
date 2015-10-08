@@ -123,21 +123,59 @@ worte = ['Pflaume', 'Bauschaum', 'Auster']
 puts worte
 puts "\n"
 # # b. Alle Element, die den String aus enthalten sollen ausgegeben werden.
-begriff = "aus"
- worte.size.times do |i|
- if worte[i].include?("aus"); puts worte[i]
- end
-end
-puts "\n"
-# # c. erzeugen eine Ausgabe nach der Länge der Worte von klein nach groß
-# puts worte.sort_by.length
-# d. Ein Hash wird ausgegeben, das Wort als Index, die Anzahl der Buchstaben als Wert
+# begriff = "aus"
+#  worte.size.times do |i|
+#  if worte[i].include?("aus"); puts worte[i]
+#  end
+# end
+# puts "\n"
 
+#####################
+liste = %w(Pflaume Bauschaum Auster)
+var = liste.select do |a|
+	a.downcase.include?("aus")
+end
+puts var
+puts "\n"
+######################
+# liste = %w(Pflaume Bauschaum Auster)
+# var = liste.select do |b|
+# 	b.include?("aus") || b.include?("Aus")
+# end
+# puts var
+# puts "\n"
+# # c. erzeugen eine Ausgabe nach der Länge der Worte von klein nach groß
+puts liste.sort_by { |s| s.length}
+puts "\n"
+# d. Ein Hash wird ausgegeben, das Wort als Index, die Anzahl der Buchstaben als Wert
+myHash = Hash.new
+liste.each do |l|
+	myHash[l] = l.length
+end
+puts myHash
+puts "\n"
 # 3. Lottogenerator:
 # a. Schreiben Sie einen kleinen Lottozahlengenerator. Es sollen 7 Zahlen aus 49 Möglichkeiten in einem Array ausgegeben werden.
-# lotto = [0..49]
-# b. Peter, Paul und Mary bilden einen Hash, etwa derart: lotto = { "Peter" => [ 2,22,33,11,23,32,26 ], ...}
+lotto = []
+7.times do 
+	z=rand(1..49)
+	while lotto.include?(z)
+		z=rand(1..49)
+	end
+	lotto << z
+end
+  
+ puts lotto.sort
+ puts "\n"
 
+ puts lotto2 = (1..49).to_a.sample(7).sort
+
+ puts "\n"
+# b. Peter, Paul und Mary bilden einen Hash, etwa derart: lotto = { "Peter" => [ 2,22,33,11,23,32,26 ], ...}
+puts lotto2 = (1..49).to_a.sample(7).sort
+
+lotto_hash = Hash.new
+%(Peter Paul Marry)
 # 4. Vergleich:
 # str_1 = "Programmieren, Federball, Whisky"
 # str_2 = "Fussball, Bier, Programmieren"
