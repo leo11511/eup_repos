@@ -1,65 +1,31 @@
-class Game
-	attr_reader :health
-	def initialize(title)
-		@title = title
-		@players = []
-
-	end
-
-	def add_player(player)
-		@players << player 
-	end
-	def play
-		puts "Da sind #{@players.count} in #{@title}'s Team"
-		@players.each do |b|
-			puts b
-		end
-		@players.each do |xyz|
-			puts xyz.blam
-			puts xyz.w00t
-			puts xyz.w00t
-			puts xyz
-		end
-	end
-
-end
+# a. erstellen Sie eine Klasse Game mit einem Konstruktor, der eine Instanzvariable title anlegt und fuellt und ein leeres Array mit dem Name Player enthaelt.
+# b. die Klasse Game hat eine Methode add_player der ein SPieler hinzugefuegt wird
+# c. eine Methode play erzeugt folgenden Ausdruck:
+# 	There are 3 players in Knuckleheads: 
+# 	I'm Moe with a health of 100 and a score of 103.
+# 	I'm Larry with a health of 60 and a score of 65.
+# 	I'm Curly with a health of 125 and a score of 130.
+# 	Moe got blammed!
+# 	Moe got w00ted!
+# 	Moe got w00ted!
+# 	I'm Moe with a health of 120 and a score of 123.
+# 	Larry got blammed!
+# 	Larry got w00ted!
+# 	Larry got w00ted!
+# 	I'm Larry with a health of 80 and a score of 85.
+# 	Curly got blammed!
+# 	Curly got w00ted!
+# 	Curly got w00ted!
+# 	I'm Curly with a health of 145 and a score of 150.
+require_relative '08_game'
+require_relative '08_player'
 
 
-class Player
-def initialize(pname, phealth=100)
-			@name = pname
-			@health = phealth
-			@score = pname.length + @health
-
-	end
-
-	def to_s
-	"Ich bin #{@name} mit einem health von #{@health} und ein Score von #{@score}"
-	end
-
-	def blam
-		@health -=10
-		"#{@name} wurde geblamt!!!"
-	end
-
-	def w00t
-		@health += 10
-		"#{@name} wurde um 10 gew00tet"
-	end
-
-end	
-player1 = Player.new('Tim')
-
-player2 = Player.new('Marvin')
-
-player3 = Player.new('Daniel')
-
-spiel1 = Game.new("Knuckleheads")
-spiel1.add_player(player1)
-spiel1.add_player(player2)
-spiel1.add_player(player3)
-spiel1.play
-
-
-
-
+player1=Player.new("Tim",100)
+	player2=Player.new("Marvin",60)
+	player3=Player.new("Daniel",125)
+	nummer1 = Game.new("CD")
+	nummer1.add_player(player1)
+	nummer1.add_player(player2)
+	nummer1.add_player(player3)
+	nummer1.play

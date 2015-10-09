@@ -6,6 +6,9 @@ class Movie
 			@title =ptitle.capitalize
 			@rank = prank
 		end	
+		def status
+			hit? ? "Hit" : "Flop"
+		end
 		# # def title
 		# # @title
 		# # end
