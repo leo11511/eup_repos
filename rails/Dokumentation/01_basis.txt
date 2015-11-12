@@ -1,0 +1,23 @@
+Neues Projekt anlegen
+	cd <projektverzeichnis>
+	rails new <projekt_name>
+	cd <projekt_name>
+
+Server sarten:
+	rails s
+
+App anschauen
+	localhost:3000
+
+Ordenerstruktur:
+	app
+		#hier liegen die entscheidenen Dateien
+		#Unterordner nach dem MVC-Prinzip
+		(ModelViewController: die Datenhaltung ist von der Logik und von der Darstellungsebene möglichst strikt zu trennen)
+		models
+			#Klassen für die Tabellen
+		controllers
+			#Klassen für die Logik und Abwicklung eines Requests
+		views
+			#Unterordner mit den Dateien der Darstellung
+

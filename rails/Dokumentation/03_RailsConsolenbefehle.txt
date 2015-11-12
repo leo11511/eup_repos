@@ -1,0 +1,19 @@
+Auf der Bash des Betriebssystems können folgende befehle ausgeführt werden:
+
+rails new <appname>
+	#erstellt ein neues Projekt
+
+rails generate
+rails g controller <events>
+	#legt einen Controller, d.h. eine Datei mit dem Namen events_controller.rb im Verzeichnis app/controllers an, mit einer Klasse mit dem Namen EventController
+	#zusätzlcih wird im app/view-Verzeichnis ein Verzeichnis events angelegt
+
+rails destroy 
+rails d controller <events>
+	#lösht die Controller-Datei und das Verzeichnis und alle weiteren vorher angelegten Dateien
+
+rails server 
+rails s
+	#startet einen Webserver, der auf dem Port 3000 lauscht
+raisl s -p3001
+	#Portänderung
