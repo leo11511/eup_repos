@@ -12,8 +12,12 @@ rails destroy
 rails d controller <events>
 	#lösht die Controller-Datei und das Verzeichnis und alle weiteren vorher angelegten Dateien
 
+rails g model event:string location:string price:decimal
+	#im Projekt wird eine Klasse Event angelegt in der Datei app/models/event.rb
+	#im Ordener db/migrate wird eine Datei angelegt, die die Befehle zum Erstellen einer Tabelle in der Datenbank enthält
 rails server 
 rails s
 	#startet einen Webserver, der auf dem Port 3000 lauscht
 raisl s -p3001
 	#Portänderung
+
