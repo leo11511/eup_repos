@@ -1,0 +1,13 @@
+<h1>Movies#show</h1>
+<p>Find me in app/views/movies/show.html.erb</p>
+
+<h1><%= @movie.title %></h1>
+<p><%= @movie.description %></p>
+<h3>Wann</h3>
+<p><%= @movie.release %></p>
+<h3>Wo</h3>
+<p><%= @movie.webiste %></p>
+<h3>Preis</h3>
+<p><%= @movie.rating %></p>
+<h3>Zuruck</h3>
+<p><%= link_to "Index", movies_path %></p>

@@ -13,3 +13,9 @@ b.	Definition im app/helpers/application_helper.rb:
 	def format_price(event)
 		...
 	end
+
+LINK_TO
+Die Verlinkung wird in Rails über dne link_to -Helper relisiert
+	link_to "Alle Anzeigen", events_path 
+produziert den Html-Code:
+	<a href="/events">Alle anzeigen</a>
