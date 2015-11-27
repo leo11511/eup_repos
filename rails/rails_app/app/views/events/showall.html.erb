@@ -1,6 +1,6 @@
-<h1>Events</h1>
+<h1>Alle Events</h1>
 <p><%= link_to "Neues Event erstellen", new_event_path %></p>
-<p>Zeige folgende <% @events.size %> an:
+<p>Zeige folgende <% @events.size %> an:</p>
 	<table>
 		<tr>
 			<th>Name</th>
@@ -25,6 +25,7 @@
 			</tr>
 		<% end %>
 	</table>
+
 	<p>
 		<%= link_to "Alle Events", showall_events_path, type: "button", class: "button sucess" %>
 </p>

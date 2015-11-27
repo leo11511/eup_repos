@@ -1,26 +1,26 @@
 <h1>Movies</h1>
-<p>
-	Es <%= @movies.count == 1 ? "ist " : " sind" %> <%= "#{pluralize(@movies.count, "Movie")}" %> vorhanden.
+<p><%= link_to "Neue Film erstellen", new_movie_path %></p>
+<h3>listing generated at: <%=Time.now %></h3>
+<p> Hier <%= @movies.size %> :</p>
+<p> Es sind <%= pluralize(@movies.count, "Movie") %> vorhanden.
+	<table>
+		<tr>
+			<th>Filmname</th>
+			<th>Bewertung</th>
+			<th>Umsatz</th>
+			<th>Beschreibung</th>
+			<th>Release Date</th>
+		</tr>
+		<% @movies.each do |movie| %>
+			<tr>
+				<td><%= movie.title %></td>
+				<td><%= movie.rating %></td>
+				<td><%= format_total_gross(movie) %></td>
+				<td><%= truncate(movie.description, length: 40, seperator: ' ') %></td>
+				<td><%= movie.realised_on %></td>
+				<td><%= link_to "Show", movie_path(movie.id) %></td>
+				<td><%= link_to "Edit", edit_movie_path(movie.id) %></td>
+				<td><%= link_to "Delete", movie_path(movie.id), method: :delete, data: {confirm: "Sicher?"} %></td>
+			</tr>
+		<% end %>
 </p>
-<table>
-	<tr>
-		<th>Title</th>
-		<th>Beschreibung</th>
-		<th>Website</th>
-		<th>Rating</th>
-		<th>Erscheinungsdatum</th>
-		<th>Umsatz</th>
-		<th>Pledging</th>
-	</tr>
-	<tr>
-	<% @movies.each do |movie| %>
-	<td><%= movie.title %></td>
-	<td><%= truncate(movie.description, length: 40) %></td>
-	<td><%= movie.website %></td>
-	<td><%= movie.rating %></td>
-	<td><%= time_ago_in_words(movie.release) %></td>
-	<td><%= format_total_gross(movie) %></td>
-	<td><%= movie.pledging %></td>
-</tr>
-<% end %>
-</table>

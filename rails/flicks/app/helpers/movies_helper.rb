@@ -1,9 +1,11 @@
 module MoviesHelper
-	def format_total_gross(movie)
-		if movie.flop?
-			content_tag(:strong, 'FLOP')
+	def ein_mehrzahl
+		if @movies.size == 1
+			"Film"
 		else
-			number_to_currency(movie.total_gross)
+			"Filme"
 		end
 	end
+
+
 end

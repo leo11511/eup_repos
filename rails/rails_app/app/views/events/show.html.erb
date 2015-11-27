@@ -1,8 +1,17 @@
 <h1><%= @event.name %></h1>
 
 <div class="panel">
-	<%= @event.descritpion %>
+	<div class="row">
+	<div class="medium-3 columns">
+		<%= image_for(@event) %>
+	</div>
+	<div class="medium-9 columns">
+		<%= @event.descritpion %>
+	</div>
 </div>
+</div>
+
+
 
 	<div class="panel">
 		<div class="row">

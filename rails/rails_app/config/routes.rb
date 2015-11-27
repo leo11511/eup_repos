@@ -1,6 +1,13 @@
 Rails.application.routes.draw do
   root "events#index"
-  resources :events #stellet automatisch die Methoden zur verfügung
+  resources :events do 
+    collection do
+      get "showall"
+    end
+    member do 
+      get "showall"
+    end
+  end
     #get "events" => "events#index"
     #get "events/:id" => "events#show"
   # The priority is based upon order of creation: first created -> highest priority.

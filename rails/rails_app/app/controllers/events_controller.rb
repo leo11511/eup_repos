@@ -10,26 +10,32 @@ class EventsController < ApplicationController
 
 	end
 
+	def showall
+		@events = Event.all
+	end
+
 	def new
 		@event = Event.new
 	end
 
 	def create
 		
-		permitted_params = params.require(:event).permit(:name, :descritpion, :location, :price, :start_at)
-		@event = Event.new(permitted_params)
-		@event.save
-		redirect_to event_path(@event.id)		
+		
+		@event = Event.new(event_params)
+		if @event.save
+		redirect_to event_path(@event.id)	
+		else
+		render "new"	
 	end
-
+end
 	def edit
 		@event = Event.find(params[:id])
 	end
 
 	def update
 		@event = Event.find(params[:id])
-		permitted_params = params.require(:event).permit(:name, :descritpion, :location, :price, :start_at)
-		@event.update(permitted_params)
+		
+		@event.update(event_params)
 		redirect_to event_path(@event.id)
 	end
 
@@ -40,6 +46,7 @@ class EventsController < ApplicationController
 	end
 	private
 	def event_params
-		params.require(:event).permitt(:name, :descritpion, :location, :price, :start_at)
+		params.require(:event).permit(:name, :descritpion, :location, :price, :start_at, :image_file, :capacity)
 	end
 end
+

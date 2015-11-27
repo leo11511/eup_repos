@@ -4,16 +4,8 @@ one:
   title: MyString
   rating: MyString
   total_gross: 9.99
-  description: MyText
-  website: MyString
-  release: 2015-11-19 08:21:34
-  pledging: 2015-11-19 08:21:34
 
 two:
   title: MyString
   rating: MyString
   total_gross: 9.99
-  description: MyText
-  website: MyString
-  release: 2015-11-19 08:21:34
-  pledging: 2015-11-19 08:21:34
