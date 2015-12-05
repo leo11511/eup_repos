@@ -1,0 +1,17 @@
+<table width="100%">
+		<tr>
+			<th>Name</th>
+			<th>Beschreibung</th>
+			<th>Ziel in Millionen</th>
+			<th>Projekt endet am:</th>
+		</tr>
+		<% @fundraising.each do |p| %>
+		<tr>
+			<td><%= p.name %></td>
+			<td><%= truncate(p.desription, length: 25, seperator: ' ', omission: ""%></td>
+			<td><%= p.target_pledge_amount %></td>
+			<td><%= p.website %></td>
+			<td><%= p.pledging_ends_on %></td>
+		</tr>
+	<% end %>
+</table>
