@@ -1,0 +1,25 @@
+<h1>Projects</h1>
+<p><%= link_to "Neues Projekt erstellen", new_project_path %></p>
+<p>Zeige folgende <% @projects.size %> an:
+	<table>
+		<tr>
+			<th>Name</th>
+			<th>Beschreibung</th>
+			<th>Start Datum</th>
+		</tr>
+		<% @projects.each do |project| %>
+			<tr>
+				<td><%= project.title %></td>
+				<td><%= truncate(project.description, length: 25, seperator: ' ', omission: " ") %>
+					<%= link_to "...", project_path(project.id) %>
+				<td><%= project.start_date %></td>
+
+
+				</td>
+				<td><%= link_to "Show", project_path(project.id) %></td>
+				<td><%= link_to "Edit", edit_project_path(project.id) %></td>
+				<td><%= link_to "Delete", project_path(project.id), method: :delete, data: {confirm: "Sicher?"} %></td>
+			</tr>
+		<% end %>
+	</table>
+</p>

@@ -1,0 +1,28 @@
+<h1><%= @project.title %></h1>
+
+	<div class="panel">
+		<div class="row">
+		<div class=" medium-2 columns">
+			Beschreibung
+		</div>
+		<div class=" medium-10 columns">
+			<%= @project.description %>
+		</div>
+		</div>
+		<div class="row">
+		<div class=" medium-2 columns">
+			Wo
+		</div>
+		<div class=" medium-10 columns">
+			<%= @project.start_date %>
+		</div>
+
+
+<ul class="button-group even-3">
+		<li><%= link_to "Back", projects_path, class: "button alert" %></li>
+
+		<li><%= link_to "Vorhandene Tasks", project_tasks_path((@project.id)), class: "button alert" %></li>
+		<li><%= link_to "Neuer Task", new_project_task_path((@project.id)), class: "button alert" %></li>
+
+
+</ul>

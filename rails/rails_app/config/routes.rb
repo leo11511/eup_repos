@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
+ 
   root "events#index"
+
   resources :events do 
+     resources :registrations
     collection do
-      get "showall"
-    end
-    member do 
       get "showall"
     end
   end

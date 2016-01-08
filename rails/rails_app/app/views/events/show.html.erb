@@ -1,5 +1,6 @@
 <h1><%= @event.name %></h1>
 
+
 <div class="panel">
 	<div class="row">
 	<div class="medium-3 columns">
@@ -10,9 +11,6 @@
 	</div>
 </div>
 </div>
-
-
-
 	<div class="panel">
 		<div class="row">
 		<div class=" medium-2 columns">
@@ -35,9 +33,14 @@
 			Preis
 		</div>
 		<div class=" medium-10 columns">
-			<%= format_price@event %>
+			<%= format_price @event %>
 		</div>
-		<div class="medium-2 columns">
-			<%= link_to "Back", events_url%>
+		</div>
 	</div>
 
+<ul class="button-group even-3">
+		<li><%= link_to "Back", events_path, class: "button alert" %></li>
+		<li><%= link_to "Registrierungen", event_registrations_path(@event.id), class: "button" %></li>
+		<li><%= link_to	"Neue Registrierung", new_event_registration_path(@event.id), class: "button" %></li>
+
+</ul>
